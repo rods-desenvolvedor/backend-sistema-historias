@@ -3,6 +3,7 @@ package com.sistema.historia.backend.models;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -18,6 +19,7 @@ public class Comentario {
 
     private String conteudo;
 
+    @Column(name = "criado_em")
     private LocalDateTime criadoEm;
     
 }
