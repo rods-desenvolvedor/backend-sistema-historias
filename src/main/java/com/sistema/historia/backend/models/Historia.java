@@ -7,7 +7,10 @@ import java.util.UUID;
 import com.sistema.historia.backend.models.enums.GeneroEnum;
 import com.sistema.historia.backend.models.enums.StatusEnum;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,9 +28,14 @@ public class Historia {
     
     private String descricao;
 
-    private GeneroEnum genero;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "genero_enum")
+    private GeneroEnum generoEnum;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status_enum")
+    private StatusEnum statusEnum;
 
-    private StatusEnum status;
-
+    @Column(name = "criado_em")
     private LocalDateTime criadoEm;
 }
